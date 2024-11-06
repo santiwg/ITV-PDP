@@ -6,6 +6,9 @@ public class DefectoVisual {
     private String tipo;
     private int numero;
 
+    public DefectoVisual() {
+    }
+
     public DefectoVisual(String nombre, String descripcion, String tipo, int numero) {
         this.nombre = nombre;
         this.descripcion = descripcion;

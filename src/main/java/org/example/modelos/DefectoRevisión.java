@@ -4,6 +4,9 @@ public class DefectoRevisión {
     private int valor;
     private DefectoVisual defecto;
 
+    public DefectoRevisión() {
+    }
+
     public DefectoRevisión(int valor, DefectoVisual defecto) {
         this.valor = valor;
         this.defecto = defecto;
