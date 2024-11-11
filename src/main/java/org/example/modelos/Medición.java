@@ -1,7 +1,7 @@
 package org.example.modelos;
 
 public class Medición {
-    private int nroMedicion;
+    private int numeroMedicion;
     private String medida;
     private float valor;
     private String resultado;
@@ -12,8 +12,8 @@ public class Medición {
     public Medición() {
     }
 
-    public Medición(int nroMedicion, String medida, float valor, String resultado, int seccion, int linea, Empleado inspector) {
-        this.nroMedicion = nroMedicion;
+    public Medición(int numeroMedicion, String medida, float valor, String resultado, int seccion, int linea, Empleado inspector) {
+        this.numeroMedicion = numeroMedicion;
         this.medida = medida;
         this.valor = valor;
         this.resultado = resultado;
