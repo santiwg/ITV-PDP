@@ -2,14 +2,15 @@ package org.example.modelos;
 
 public class TipoVehiculo {
 
+    private String nombre;
     private String descripcion;
     private double peso;
-    private String nombre;
+
 
     public TipoVehiculo() {
     }
 
-    public TipoVehiculo(String descripcion, double peso, String nombre) {
+    public TipoVehiculo(String nombre, double peso, String descripcion) {
         this.descripcion = descripcion;
         this.peso = peso;
         this.nombre = nombre;
@@ -43,5 +44,13 @@ public class TipoVehiculo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return (nombre +
+                " Descripcion=" + descripcion +
+                " Peso=" + peso)
+                ;
     }
 }

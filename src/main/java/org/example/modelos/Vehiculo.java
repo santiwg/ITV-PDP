@@ -5,7 +5,7 @@ public class Vehiculo {
     private String marca;
     private String modelo;
     private String nroChasis;
-    private int anioFabricación;
+    private int anioFabricacion;
     private double kilometros;
     private String tipoCombustible;
     private int cantidadEjes;
@@ -15,11 +15,11 @@ public class Vehiculo {
     public Vehiculo() {
     }
 
-    public Vehiculo(int anioFabricación, TipoVehiculo tipovehiculo, String tipoCombustible, int cantidadEjes, double kilometros, String marca, String patente, String nroChasis, String modelo) {
-        this.anioFabricación = anioFabricación;
+    public Vehiculo(int anioFabricacion, TipoVehiculo tipovehiculo, String tipoCombustible, double kilometros, String marca, String patente, String nroChasis, String modelo) {
+        this.anioFabricacion = anioFabricacion;
         this.tipovehiculo = tipovehiculo;
         this.tipoCombustible = tipoCombustible;
-        this.cantidadEjes = cantidadEjes;
+
         this.kilometros = kilometros;
         this.marca = marca;
         this.patente = patente;
@@ -29,7 +29,7 @@ public class Vehiculo {
 
     //hago un constructor sin la cantidad de ejes.
 
-    public Vehiculo(TipoVehiculo tipovehiculo, String tipoCombustible, String patente, String nroChasis, String modelo, String marca, double kilometros, int anioFabricación) {
+    public Vehiculo(TipoVehiculo tipovehiculo, String tipoCombustible, String patente, String nroChasis, String modelo, String marca, double kilometros, int anioFabricacion,int cantidadEjes) {
         this.tipovehiculo = tipovehiculo;
         this.tipoCombustible = tipoCombustible;
         this.patente = patente;
@@ -37,7 +37,8 @@ public class Vehiculo {
         this.modelo = modelo;
         this.marca = marca;
         this.kilometros = kilometros;
-        this.anioFabricación = anioFabricación;
+        this.anioFabricacion = anioFabricacion;
+        this.cantidadEjes = cantidadEjes;
     }
 
     public TipoVehiculo getTipovehiculo() {
@@ -48,12 +49,12 @@ public class Vehiculo {
         this.tipovehiculo = tipovehiculo;
     }
 
-    public int getAnioFabricación() {
-        return anioFabricación;
+    public int getAnioFabricacion() {
+        return anioFabricacion;
     }
 
-    public void setAnioFabricación(int anioFabricación) {
-        this.anioFabricación = anioFabricación;
+    public void setAnioFabricacion(int anioFabricacion) {
+        this.anioFabricacion = anioFabricacion;
     }
 
     public int getCantidadEjes() {

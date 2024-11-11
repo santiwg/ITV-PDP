@@ -1,0 +1,5 @@
+nombre, peso, descripcion
+Moto, 200
+Auto, 400
+Camioneta, 600
+Camion, 800
