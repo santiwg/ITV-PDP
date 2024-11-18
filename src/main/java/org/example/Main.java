@@ -9,7 +9,7 @@ public class Main {
         GestorTipoVehiculo gestorTipoVehiculo=new GestorTipoVehiculo();
         gestorTipoVehiculo.cargarDatosDesdeArchivo("src/main/java/org/example/Tipos Vehículo.txt");
         GestorVehiculo gestorVehiculo=new GestorVehiculo(gestorTipoVehiculo);
-
+        gestorVehiculo.cargarDatosDesdeArchivo("src/main/java/org/example/Vehiculos.txt");
 
         new PantallaPrincipal(gestorVehiculo);
 
