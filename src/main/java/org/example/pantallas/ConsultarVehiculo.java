@@ -36,7 +36,7 @@ public class ConsultarVehiculo extends JFrame{
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
 
         setTitle("Consultar Vehiculo");  //configurar el título de la ventana
-        setSize(400,400); //configurar el tamaño de la ventana
+        setSize(420,500); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
@@ -48,7 +48,7 @@ public class ConsultarVehiculo extends JFrame{
 
                 try {
                     if (gVehiculo.buscar(caPatente.getText().toUpperCase())==null){
-                        throw new IllegalArgumentException("No se ha registrado un vehículo con esa patente.");
+                        throw new IllegalArgumentException("No se ha registrado un vehículo con esa patente. ");
                     }
 
                     /*CONVIENE GUARDAR LA INSTANCIA EN UNA VARIABLE PARA TRABAJAR CON SUS VALORES
@@ -65,9 +65,9 @@ public class ConsultarVehiculo extends JFrame{
                     caModelo.setText(v.getModelo());
 
                 } catch (IllegalArgumentException error) {
-                    new Mensaje("Error al buscar el vehículo:\n"+error.getMessage());
+                    new Mensaje("Error al buscar el vehículo: \n "+error.getMessage());
                 } catch (Exception error) {
-                    new Mensaje("Error al buscar el vehículo"+error.getMessage());
+                    new Mensaje("Error al buscar el vehículo "+error.getMessage());
                 }
             }
 

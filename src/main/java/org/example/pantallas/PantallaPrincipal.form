@@ -18,7 +18,10 @@
         <children>
           <component id="a03a3" class="javax.swing.JButton" binding="botRegRev">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="200" height="-1"/>
+                <maximum-size width="200" height="-1"/>
+              </grid>
             </constraints>
             <properties>
               <hideActionText value="false"/>
@@ -27,8 +30,10 @@
           </component>
           <component id="b059e" class="javax.swing.JButton" binding="button4" default-binding="true">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="200" height="-1"/>
                 <preferred-size width="78" height="28"/>
+                <maximum-size width="200" height="-1"/>
               </grid>
             </constraints>
             <properties>
@@ -37,7 +42,10 @@
           </component>
           <component id="426bf" class="javax.swing.JButton" binding="button2" default-binding="true">
             <constraints>
-              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="200" height="-1"/>
+                <maximum-size width="200" height="-1"/>
+              </grid>
             </constraints>
             <properties>
               <text value="Button"/>
@@ -45,7 +53,10 @@
           </component>
           <component id="29bc9" class="javax.swing.JButton" binding="botConsVe">
             <constraints>
-              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="200" height="-1"/>
+                <maximum-size width="200" height="-1"/>
+              </grid>
             </constraints>
             <properties>
               <text value="Consultar Vehículo"/>
@@ -53,7 +64,10 @@
           </component>
           <component id="6b01d" class="javax.swing.JButton" binding="botRegVe">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="200" height="-1"/>
+                <maximum-size width="200" height="-1"/>
+              </grid>
             </constraints>
             <properties>
               <text value="Registrar Vehículo"/>
@@ -61,7 +75,10 @@
           </component>
           <component id="57507" class="javax.swing.JButton" binding="button5" default-binding="true">
             <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="200" height="-1"/>
+                <maximum-size width="200" height="-1"/>
+              </grid>
             </constraints>
             <properties>
               <text value="Button"/>
@@ -69,7 +86,10 @@
           </component>
           <component id="1260b" class="javax.swing.JButton" binding="botConsRev">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="200" height="-1"/>
+                <maximum-size width="200" height="-1"/>
+              </grid>
             </constraints>
             <properties>
               <text value="Consultar Revisión"/>
@@ -77,7 +97,10 @@
           </component>
           <component id="bd2bc" class="javax.swing.JButton" binding="button1" default-binding="true">
             <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="200" height="-1"/>
+                <maximum-size width="200" height="-1"/>
+              </grid>
             </constraints>
             <properties>
               <text value="Button"/>
