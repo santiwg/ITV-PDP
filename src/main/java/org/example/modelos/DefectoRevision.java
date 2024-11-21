@@ -1,13 +1,13 @@
 package org.example.modelos;
 
-public class DefectoRevisión {
+public class DefectoRevision {
     private int valor;
     private DefectoVisual defecto;
 
-    public DefectoRevisión() {
+    public DefectoRevision() {
     }
 
-    public DefectoRevisión(int valor, DefectoVisual defecto) {
+    public DefectoRevision(int valor, DefectoVisual defecto) {
         this.valor = valor;
         this.defecto = defecto;
     }
