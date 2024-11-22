@@ -34,6 +34,7 @@ public class RegistrarRevision extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 
+        
         DefaultComboBoxModel <EstacionVTV> estaciones = new DefaultComboBoxModel<>();
         for (EstacionVTV estacion: gestorRevision.getGestorEstacionVTV().getListaEstaciones()) {
             estaciones.addElement(estacion);
@@ -111,7 +112,6 @@ public class RegistrarRevision extends JFrame {
                 }
             }
         });
-
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
         Timer timer = new Timer(1000, e -> {
