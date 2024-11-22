@@ -133,12 +133,13 @@ public class GestorRevision {
 
 
     public ArrayList<Revision> buscarRevisionesCliente(String numDocumento) {
-
         return this.listaRevisiones.stream().filter(r -> r.getCliente().getNroDocumento().equals(numDocumento)).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public ArrayList<Revision> buscarRevisionesVehiculo(String patente) {
         return this.listaRevisiones.stream().filter(r -> r.getVehiculo().getPatente().equals(patente)).collect(Collectors.toCollection(ArrayList::new));
-
+    }
+    public ArrayList<Revision> buscarRevisionesClienteYVehiculo(String numDocumento, String patente){
+        return this.listaRevisiones.stream().filter(r -> r.getCliente().getNroDocumento().equals(numDocumento)).filter(r -> r.getVehiculo().getPatente().equals(patente)).collect(Collectors.toCollection(ArrayList::new));
     }
 }

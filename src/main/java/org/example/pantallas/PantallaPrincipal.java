@@ -69,6 +69,13 @@ public class PantallaPrincipal extends JFrame {
                 new RegistrarRevision(gRevision);
             }
         });
+        botConsRev.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                new ConsultarRevision(gRevision);
+            }
+        });
     }
 
 

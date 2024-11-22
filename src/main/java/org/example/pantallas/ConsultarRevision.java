@@ -4,36 +4,102 @@ import org.example.gestores.GestorRevision;
 import org.example.modelos.Revision;
 
 import javax.swing.*;
-import java.util.ArrayList;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-public class ConsultarRevision extends JFrame{
+public class ConsultarRevision extends JFrame {
     private JPanel panelPrincipal;
     private GestorRevision gestorRevision;
     private JTextField TFNumDoc;
     private JLabel LNumDoc;
-    private JTextField TFPatente;
+    private JTextField TFNumPatente;
     private JLabel LPatente;
     private JLabel LRevisiones;
-    private JList ListRevisiones;
+    private JComboBox<Revision> CBRevisiones;  // Cambiado a JComboBox<Revision>
     private JButton BBuscar;
+    private JTextField TFRevision;
+    private JTextField TFDoc;
+    private JTextField TFPatente;
+    private JTextField TFFechaAlta;
+    private JTextField TFEstacionVTV;
+    private JLabel LRevision;
+    private JLabel LDoc;
+    private JLabel LNumPatente;
+    private JLabel LFechaAlta;
+    private JLabel LEstacionVTV;
+    private JLabel FIntroduccion;
 
     public ConsultarRevision(GestorRevision gestorRevision) {
         this.gestorRevision = gestorRevision;
         setContentPane(panelPrincipal);
 
-        setTitle("Consultar Vehiculo");  //configurar el título de la ventana
-        setSize(400, 400); //configurar el tamaño de la ventana
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
-        setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
-        setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
+        setTitle("Consultar Revisión");  // Configurar el título de la ventana
+        setSize(520, 500); // Configurar el tamaño de la ventana
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definir el comportamiento de cierre
+        setLocationRelativeTo(null); // Centrar la ventana
+        setVisible(true); // Mostrar la ventana
 
+        BBuscar.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
 
-        //Dividir de acuerdo a que dato se ingreso
-        //addElement solo funciona con DefaultListModel
+                try {
+                    String rPatente = TFNumPatente.getText().isEmpty() ? null : TFNumPatente.getText().toUpperCase();
+                    String rCliente = TFNumDoc.getText().isEmpty() ? null : TFNumDoc.getText().toUpperCase();
 
-        //ArrayList<Revision> r = gestorRevision.buscarRevisionesCliente(TFNumDoc.getText().toUpperCase(), TFPatente.getText().toUpperCase());
-        //for(Revision revision: r){
-        //    ListRevisiones.addElement(revision);
-        //}
+                    // Mensajes de depuración para verificar campos vacíos
+                    if (rPatente == null && rCliente == null) {
+                        throw new IllegalArgumentException("Ambos campos están vacíos.");
+                    }
+
+                    if (rPatente != null && gestorRevision.getGestorVehiculo().buscar(rPatente) == null) {
+                        throw new IllegalArgumentException("No existe un vehículo registrado con esa patente.");
+                    }
+                    if (rCliente != null && gestorRevision.getGestorCliente().buscar(rCliente) == null) {
+                        throw new IllegalArgumentException("No existe un cliente registrado con ese N° de documento.");
+                    }
+
+                    CBRevisiones.removeAllItems();  // Limpia el JComboBox antes de agregar elementos
+
+                    // Buscar revisiones por cliente y/o vehículo
+                    if (rCliente != null && rPatente != null){
+                        for (Revision revision : gestorRevision.buscarRevisionesClienteYVehiculo(rCliente, rPatente)) {
+                            CBRevisiones.addItem(revision);
+                        }
+                    } else if (rPatente == null) {
+                        for (Revision revision : gestorRevision.buscarRevisionesCliente(rCliente)) {
+                            CBRevisiones.addItem(revision);
+                        }
+                    } else if (rCliente == null) {
+                        for (Revision revision : gestorRevision.buscarRevisionesVehiculo(rPatente)) {
+                            CBRevisiones.addItem(revision);
+                        }
+                    }
+
+                } catch (IllegalArgumentException ex) {
+                    JOptionPane.showMessageDialog(panelPrincipal, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
+        CBRevisiones.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                Revision r = (Revision) CBRevisiones.getSelectedItem();
+                if (r != null) {
+                    // Realizar alguna acción con la revisión seleccionada
+                    System.out.println("Revisión seleccionada: " + r);
+                    // Aquí puedes añadir el código para realizar la acción deseada
+                    TFRevision.setText(String.valueOf(r.getNroRevision()));
+                    TFDoc.setText(r.getCliente().getNroDocumento());
+                    TFPatente.setText(r.getVehiculo().getPatente());
+                    TFFechaAlta.setText(String.valueOf(r.getFechaAlta()));
+                    TFEstacionVTV.setText(r.getEstacion().toString());
+                }
+            }
+        });
     }
 }
+
+

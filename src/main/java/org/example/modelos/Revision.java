@@ -135,5 +135,10 @@ public class Revision {
         return true;
     }
 
-
+    public String toString() {
+        return "N° Revision:" + nroRevision +
+                " - Vehiculo:" + vehiculo.getPatente() +
+                " - Fecha:" + fechaAlta +
+                " - Estacion:" + estacion.getNumero();
+    }
 }
