@@ -4,6 +4,8 @@ import org.example.gestores.GestorVehiculo;
 import org.example.modelos.TipoVehiculo;
 
 import javax.swing.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -20,7 +22,6 @@ public class RegistrarVehiculo extends JFrame {
     private JLabel etAnioFabricacion;
     private JLabel etKilometros;
     private JTextField caMarca;
-    private JLabel etTipo;
     private JTextField caCombustible;
     private JTextField caPatente;
     private JLabel etPatente;
@@ -28,8 +29,8 @@ public class RegistrarVehiculo extends JFrame {
     private JLabel etCombustible;
     private JTextField caEjes;
     private JLabel etEjes;
-    private JList listaTipos;
     private JLabel etSeleccioTipo;
+    private JComboBox<TipoVehiculo> comboTipos;
     private GestorVehiculo gestorVehiculo;
 
 
@@ -45,19 +46,22 @@ public class RegistrarVehiculo extends JFrame {
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
 
 
-        DefaultListModel <TipoVehiculo> tipos=new DefaultListModel<>();
-        for (TipoVehiculo t:gestorVehiculo.getGestorTV().getListaTiposVehiculo()){
+
+
+        DefaultComboBoxModel<TipoVehiculo> tipos = new DefaultComboBoxModel<>();
+        for (TipoVehiculo t : gestorVehiculo.getGestorTV().getListaTiposVehiculo()) {
             tipos.addElement(t);
         }
-        listaTipos.setModel(tipos); //set model es cuando le paso una estructura
-
-        listaTipos.addMouseListener(new MouseAdapter() {
+        comboTipos.setModel(tipos);
+        comboTipos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                caTipo.setText(listaTipos.getSelectedValue().toString());
+                caTipo.setText(comboTipos.getSelectedItem().toString());
             }
         });
+
+
         registrar.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -75,7 +79,7 @@ public class RegistrarVehiculo extends JFrame {
                     String nroChasis = caNroChasis.getText().isEmpty() ? null : caNroChasis.getText().toUpperCase();
                     String marca = caMarca.getText().isEmpty() ? null : caMarca.getText().toUpperCase();
                     String modelo = caModelo.getText().isEmpty() ? null : caModelo.getText().toUpperCase();
-                    TipoVehiculo tipo = listaTipos.getSelectedValue() == null ? null : (TipoVehiculo) listaTipos.getSelectedValue(); // uso casteo
+                    TipoVehiculo tipo = comboTipos.getSelectedItem() == null ? null : (TipoVehiculo) comboTipos.getSelectedItem(); // uso casteo
                     String tipoCombustible = caCombustible.getText().isEmpty() ? null : caCombustible.getText().toUpperCase();
 
                     if (patente == null || nroChasis == null || marca == null || modelo == null || tipoCombustible == null || tipo == null) {

@@ -1,1 +1,5 @@
 patente,marca,modelo,nroChasis,anioFabricacion,kilometros,tipoCombustible,cantidadEjes,tipoVehiculo
+
+DDH893,TWINGO,RENAULT,JOFNVJNF,2024,789.0,NAFTA,0,Auto
+
+WUR777,FIAT600,CHEVROLET,HUBVUREIORWN,1980,789000.0,NAFTA,0,Auto

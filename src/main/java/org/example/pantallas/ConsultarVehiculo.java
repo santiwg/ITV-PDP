@@ -51,8 +51,6 @@ public class ConsultarVehiculo extends JFrame{
                         throw new IllegalArgumentException("No se ha registrado un vehículo con esa patente. ");
                     }
 
-                    /*CONVIENE GUARDAR LA INSTANCIA EN UNA VARIABLE PARA TRABAJAR CON SUS VALORES
-                     O LLAMAR EN TODAS LAS LINEAS AL METODO DE BUSQUEDA??*/
 
                     Vehiculo v=gVehiculo.buscar(caPatente.getText().toUpperCase());
                     caNroChasis.setText(v.getNroChasis());
@@ -73,8 +71,5 @@ public class ConsultarVehiculo extends JFrame{
 
         });
     }
-    /*public static void main(String[] args){
-        new ConsultarVehiculo(); //no lo guardo en ninguna variable, cuando se ejecuta el main me crea el objeto que es la UI
-    }*/
 
 }

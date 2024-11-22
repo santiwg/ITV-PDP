@@ -10,24 +10,24 @@ import java.awt.event.MouseEvent;
 public class ConsultarCliente extends JFrame{
     private GestorCliente gCliente;
     private JPanel panelPrincipal;
-    private JLabel JNumDNI;
+    private JLabel etNumDNI;
     private JTextField caNumDni;
     private JButton buscar;
-    private JLabel JNombre;
+    private JLabel etNombre;
     private JTextField caNombre;
-    private JLabel JApellido;
+    private JLabel etApellido;
     private JTextField caApellido;
-    private JLabel JFechaNacimiento;
+    private JLabel etFechaNacimiento;
     private JTextField caFechaNacimiento;
-    private JLabel JEdad;
+    private JLabel etEdad;
     private JTextField caEdad;
-    private JLabel JCorreo;
+    private JLabel etCorreo;
     private JTextField caCorreo;
-    private JLabel JDomicilio;
+    private JLabel etDomicilio;
     private JTextField caDomicilio;
-    private JLabel JTelefono;
+    private JLabel etTelefono;
     private JTextField caTelefono;
-    private JLabel JTipoDNI;
+    private JLabel etTipoDNI;
     private JTextField caTipoDoc;
 
 
@@ -56,8 +56,8 @@ public class ConsultarCliente extends JFrame{
                     caNumDni.setText(c.getNroDocumento());
                     caNombre.setText(String.valueOf(c.getNombre()));
                     caApellido.setText(c.getApellido());
-                    caFechaNacimiento.setText((String.valueOf(c.getFechaNacimiento()))); // LEER DATE
-                    // caEdad.setText((c.calcularEdad())); // IMPLEMENTAR METODO
+                    caFechaNacimiento.setText(c.getFechaNacimiento().getDayOfMonth() + "/" + c.getFechaNacimiento().getMonthValue() + "/" + c.getFechaNacimiento().getYear()); // LEER DATE
+                    caEdad.setText((c.calcularEdad())+ " años");
                     caCorreo.setText(c.getCorreo());
                     caDomicilio.setText(c.getDomicilio());
                     caTelefono.setText(Integer.toString(c.getNroTelefono()));

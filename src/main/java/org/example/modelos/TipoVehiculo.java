@@ -48,9 +48,6 @@ public class TipoVehiculo {
 
     @Override
     public String toString() {
-        return (nombre +
-                " Descripcion=" + descripcion +
-                " Peso=" + peso)
-                ;
+        return nombre;
     }
 }

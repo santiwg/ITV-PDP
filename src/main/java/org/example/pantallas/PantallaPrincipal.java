@@ -1,6 +1,6 @@
 package org.example.pantallas;
 
-import org.example.gestores.GestorTipoVehiculo;
+import org.example.gestores.GestorCliente;
 import org.example.gestores.GestorVehiculo;
 
 import javax.swing.*;
@@ -11,19 +11,19 @@ import java.awt.event.MouseEvent;
 public class PantallaPrincipal extends JFrame {
     private JPanel panelPrincipal;
     private JButton botConsVe;
-    private JButton button2;
-    private JButton button4;
+    private JButton botRegCl;
     private JButton botConsRev;
     private JButton botRegRev;
-    private JButton button5;
     private JButton botRegVe;
-    private JButton button1;
+    private JButton botConsCl;
     private GestorVehiculo gVehiculo;
+    private GestorCliente gCliente;
 
 
 
-    public PantallaPrincipal(GestorVehiculo gVehiculo) throws HeadlessException {
+    public PantallaPrincipal(GestorVehiculo gVehiculo, GestorCliente gCliente) throws HeadlessException {
         this.gVehiculo = gVehiculo;
+        this.gCliente=gCliente;
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
         setTitle("Pantalla Principal");  //configurar el título de la ventana
         setSize(420,500); //configurar el tamaño de la ventana
@@ -42,6 +42,21 @@ public class PantallaPrincipal extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 new ConsultarVehiculo(gVehiculo);
+            }
+        });
+
+        botConsCl.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                new ConsultarCliente(gCliente);
+            }
+        });
+        botRegCl.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                new RegistrarCliente(gCliente);
             }
         });
     }

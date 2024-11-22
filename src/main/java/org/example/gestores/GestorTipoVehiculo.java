@@ -41,13 +41,9 @@ private ArrayList<TipoVehiculo> listaTiposVehiculo=new ArrayList<>();
     }
 
     public TipoVehiculo buscar(String tipo) {
-        for (TipoVehiculo t: listaTiposVehiculo){
-            if (t.getNombre().equals(tipo)){
-                return t;
-            }
-        }
-        return null;
+        return listaTiposVehiculo.stream().filter(t -> t.getNombre().equals(tipo)).findFirst().orElse(null);
     }
+
 
     public ArrayList<TipoVehiculo> getListaTiposVehiculo() {
         return listaTiposVehiculo;

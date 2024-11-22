@@ -1,1 +1,3 @@
-nombre,apellido,fechaNacimiento,correo,domicilio,nroTelefono,tipoDocumento,nroDocumento
+nombre,apellido,fechaNacimiento(dd/mm/aaaa),correo,domicilio,nroTelefono,tipoDocumento,nroDocumento
+HJHJJ,NFJVF,25/11/2004,FVIO,NVO,3345,VNONEO,IRNFIORWN
+SANTI,UBRUVBUR,12/2/2020,SANTIWG,VFNIF,3,45,46034924

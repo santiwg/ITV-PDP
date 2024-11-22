@@ -83,11 +83,6 @@ private GestorTipoVehiculo gestorTV;
         }
     }
     public Vehiculo buscar(String pat) {
-        for (Vehiculo v: listaVehiculos){
-            if (v.getPatente().equals(pat)){
-                return v;
-            }
-        }
-        return null;
+        return listaVehiculos.stream().filter(v -> v.getPatente().equals(pat)).findFirst().orElse(null);
     }
 }

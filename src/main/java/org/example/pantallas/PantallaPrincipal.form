@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="e22aa" binding="panelPrincipal" layout-manager="GridLayoutManager" row-count="8" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="e22aa" binding="panelPrincipal" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -28,7 +28,7 @@
               <text value="Registrar Revisión"/>
             </properties>
           </component>
-          <component id="b059e" class="javax.swing.JButton" binding="button4" default-binding="true">
+          <component id="b059e" class="javax.swing.JButton" binding="botRegCl">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <minimum-size width="200" height="-1"/>
@@ -37,18 +37,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Button"/>
-            </properties>
-          </component>
-          <component id="426bf" class="javax.swing.JButton" binding="button2" default-binding="true">
-            <constraints>
-              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <minimum-size width="200" height="-1"/>
-                <maximum-size width="200" height="-1"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="Button"/>
+              <text value="Registrar Cliente"/>
             </properties>
           </component>
           <component id="29bc9" class="javax.swing.JButton" binding="botConsVe">
@@ -73,17 +62,6 @@
               <text value="Registrar Vehículo"/>
             </properties>
           </component>
-          <component id="57507" class="javax.swing.JButton" binding="button5" default-binding="true">
-            <constraints>
-              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <minimum-size width="200" height="-1"/>
-                <maximum-size width="200" height="-1"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="Button"/>
-            </properties>
-          </component>
           <component id="1260b" class="javax.swing.JButton" binding="botConsRev">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -92,10 +70,10 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Consultar Revisión"/>
+              <text value="Consultar Revisiones"/>
             </properties>
           </component>
-          <component id="bd2bc" class="javax.swing.JButton" binding="button1" default-binding="true">
+          <component id="bd2bc" class="javax.swing.JButton" binding="botConsCl">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
                 <minimum-size width="200" height="-1"/>
@@ -103,7 +81,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Button"/>
+              <text value="Consultar Cliente"/>
             </properties>
           </component>
         </children>

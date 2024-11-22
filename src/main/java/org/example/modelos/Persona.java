@@ -1,18 +1,19 @@
 package org.example.modelos;
+import java.time.LocalDate;
 import java.util.Date;
 
 public abstract class Persona {
 
     protected String nombre;
     protected String apellido;
-    protected Date fechaNacimiento;
+    protected LocalDate fechaNacimiento;
     protected String correo;
     protected String domicilio;
     protected int nroTelefono;
     protected String tipoDocumento;
     protected String nroDocumento;
 
-    public Persona(String nombre, String apellido, Date fechaNacimiento, String correo, String domicilio, int nroTelefono, String tipoDocumento, String nroDocumento) {
+    public Persona(String nombre, String apellido, LocalDate fechaNacimiento, String correo, String domicilio, int nroTelefono, String tipoDocumento, String nroDocumento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
@@ -39,11 +40,11 @@ public abstract class Persona {
         this.apellido = apellido;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -87,7 +88,10 @@ public abstract class Persona {
         this.nroDocumento = nroDocumento;
     }
 
-    public void calcularEdad(){
+    public int calcularEdad(){
+
+        // Calcula la diferencia y devuelve los años de edad
+        return fechaNacimiento.until(LocalDate.now()).getYears();
     }
 
 }

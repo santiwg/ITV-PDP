@@ -2,8 +2,15 @@ package org.example.gestores;
 
 import org.example.modelos.Cliente;
 
+
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
 
 public class GestorCliente {
     private ArrayList<Cliente> listaClientes = new ArrayList<>();
@@ -31,7 +38,12 @@ public class GestorCliente {
                 if (datos.length == 8) { // si la línea tiene todos los atributos
                     String nombre = datos[0].trim();
                     String apellido = datos[1].trim();
-                    int fechaNacimiento = Integer.parseInt(datos[2].trim());// Hay que pasarla a Date
+                    List<Integer> fecha = Arrays.stream(datos[2].trim().split("/"))
+                            .map(Integer::parseInt).collect(Collectors.toList());
+                    int diaNacimiento = fecha.get(0);
+                    int mesNacimiento = fecha.get(1);
+                    int anioNacimiento = fecha.get(2);
+                    LocalDate fechaNacimiento=LocalDate.of(anioNacimiento,mesNacimiento,diaNacimiento);
                     String correo = datos[3].trim();
                     String domicilio = datos[4].trim();
                     int nroTelefono = Integer.parseInt(datos[5].trim());
@@ -50,28 +62,25 @@ public class GestorCliente {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
     }
-    public void agregar(String nombre, String apellido,int fechaNacimiento, String correo, String domicilio, int nroTelefono, String tipoDocumento, String nroDocumento) {
+    public void agregar(String nombre, String apellido,LocalDate fechaNacimiento, String correo, String domicilio, int nroTelefono, String tipoDocumento, String nroDocumento) {
         Cliente c = new Cliente(nombre,apellido,fechaNacimiento,correo,domicilio,nroTelefono,tipoDocumento,nroDocumento);
         listaClientes.add(c);
         cargarEnArchivo("src/main/java/org/example/Clientes.txt",c);
     }
-    public void cargarEnArchivo(String archivo, Cliente c) {
+    public void cargarEnArchivo(String archivo, Cliente cliente) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true))) {
-            String nuevaLinea=c.getNroDocumento() + ',' + c.getNombre() + ',' + c.getApellido() + ',' + String.valueOf(c.getFechaNacimiento())
-                    + ',' + c.getTipoDocumento() + ',' + c.getCorreo() + ',' + c.getDomicilio() + ',' + String.valueOf(c.getNroTelefono());
-            // Escribe el texto en una nueva línea al final del archivo
-            writer.newLine(); // Inserta una nueva línea
-            writer.write(nuevaLinea); // Escribe el contenido
+            String nuevaLinea = cliente.getNombre() + "," + cliente.getApellido() + "," +cliente.getFechaNacimiento().getDayOfMonth() + "/" + cliente.getFechaNacimiento().getMonthValue() + "/" + cliente.getFechaNacimiento().getYear() + "," +
+                    cliente.getCorreo() + "," + cliente.getDomicilio() + "," +cliente.getNroTelefono() + "," + cliente.getTipoDocumento() + "," +cliente.getNroDocumento();
+
+            writer.newLine(); // Inserta una nueva línea antes de escribir
+            writer.write(nuevaLinea); // Escribe la nueva línea en el archivo
+
         } catch (IOException e) {
             System.out.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
     public Cliente buscar(String doc) {
-        for (Cliente c: listaClientes){
-            if (c.getNroDocumento().equals(doc)){
-                return c;
-            }
-        }
-        return null;
+        return listaClientes.stream().filter(c -> c.getNroDocumento().equals(doc)).findFirst().orElse(null);
     }
+
 }

@@ -14,6 +14,6 @@ public class Main {
         GestorCliente gestorCliente = new GestorCliente();
         gestorCliente.cargarDatosDesdeArchivo("src/main/java/org/example/Clientes.txt");
 
-        new PantallaPrincipal(gestorVehiculo);
+        new PantallaPrincipal(gestorVehiculo,gestorCliente);
     }
 }
