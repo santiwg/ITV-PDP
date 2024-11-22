@@ -4,9 +4,13 @@ import org.example.gestores.GestorRevision;
 import org.example.modelos.EstacionVTV;
 
 import javax.swing.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class RegistrarRevision extends JFrame {
     private JPanel panelPrincipal;
@@ -17,6 +21,7 @@ public class RegistrarRevision extends JFrame {
     private JLabel etCliente;
     private JTextField caCliente;
     private JButton registrar;
+    private JLabel etFecha;
     public GestorRevision gestorRevision;
 
     public RegistrarRevision(GestorRevision gestorRevision) {
@@ -29,6 +34,7 @@ public class RegistrarRevision extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 
+        
         DefaultComboBoxModel <EstacionVTV> estaciones = new DefaultComboBoxModel<>();
         for (EstacionVTV estacion: gestorRevision.getGestorEstacionVTV().getListaEstaciones()) {
             estaciones.addElement(estacion);
@@ -68,5 +74,49 @@ public class RegistrarRevision extends JFrame {
                 }
             }
         });
+        caPatente.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+                if (caPatente.getText().equals("Ingrese la patente del vehículo")) {
+                    caPatente.setText("");
+                }
+            }
+        });
+
+        caCliente.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                super.focusGained(e);
+                if (caCliente.getText().equals("Ingrese el N° de documento")) {
+                    caCliente.setText("");
+                }
+            }
+        });
+
+        caPatente.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                if (caPatente.getText().isEmpty()) {
+                    caPatente.setText("Ingrese la patente del vehículo");
+                }
+            }
+        });
+        caCliente.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusLost(FocusEvent e) {
+                super.focusLost(e);
+                if (caCliente.getText().isEmpty()) {
+                    caCliente.setText("Ingrese el N° de documento");
+                }
+            }
+        });
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+        Timer timer = new Timer(1000, e -> {
+            etFecha.setText(formatoFecha.format(new Date()));
+        });
+        timer.start();
     }
 }
