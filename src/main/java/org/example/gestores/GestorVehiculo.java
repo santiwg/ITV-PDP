@@ -1,12 +1,13 @@
 package org.example.gestores;
 
+import org.example.interfaces.InterfazGestor;
 import org.example.modelos.TipoVehiculo;
 import org.example.modelos.Vehiculo;
 
 import java.io.*;
 import java.util.ArrayList;
 
-public class GestorVehiculo {
+public class GestorVehiculo implements InterfazGestor {
 private ArrayList<Vehiculo> listaVehiculos=new ArrayList<>();
 private GestorTipoVehiculo gestorTV;
 
