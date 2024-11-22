@@ -100,7 +100,7 @@ public class GestorRevision implements InterfazGestor {
                     listaRevisiones.add(new Revision(nroRevision, cliente, vehiculo, estacionVTV, fechaAlta));
                 }
                 else {
-                    System.out.println("Formato incorrecto en la línea: " + linea);
+                    System.out.println("Formato incorrecto en archivo de revisiones");
                 }
             }
         } catch (IOException e) {

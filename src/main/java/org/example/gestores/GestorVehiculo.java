@@ -59,7 +59,7 @@ private GestorTipoVehiculo gestorTV;
                     listaVehiculos.add(new Vehiculo(tipoVehiculo,tipoCombustible,patente,nroChasis,modelo,marca,kilometros,anioFabricacion,cantidadEjes));
                 }
                 else {
-                    System.out.println("Formato incorrecto en la línea: " + linea);
+                    System.out.println("Formato incorrecto en archivo de vehiculos");
                 }
             }
         } catch (IOException e) {

@@ -4,6 +4,8 @@ import org.example.gestores.GestorRevision;
 import org.example.modelos.Revision;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -33,7 +35,7 @@ public class ConsultarRevision extends JFrame {
         this.gestorRevision = gestorRevision;
         setContentPane(panelPrincipal);
 
-        setTitle("Consultar Revisión");  // Configurar el título de la ventana
+        setTitle("Consultar Revisiones");  // Configurar el título de la ventana
         setSize(520, 500); // Configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definir el comportamiento de cierre
         setLocationRelativeTo(null); // Centrar la ventana
@@ -82,15 +84,12 @@ public class ConsultarRevision extends JFrame {
             }
         });
 
-        CBRevisiones.addMouseListener(new MouseAdapter() {
+        CBRevisiones.addActionListener(new ActionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
+            public void actionPerformed(ActionEvent e) {
                 Revision r = (Revision) CBRevisiones.getSelectedItem();
                 if (r != null) {
-                    // Realizar alguna acción con la revisión seleccionada
-                    System.out.println("Revisión seleccionada: " + r);
-                    // Aquí puedes añadir el código para realizar la acción deseada
+
                     TFRevision.setText(String.valueOf(r.getNroRevision()));
                     TFDoc.setText(r.getCliente().getNroDocumento());
                     TFPatente.setText(r.getVehiculo().getPatente());

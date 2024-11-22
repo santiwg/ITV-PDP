@@ -36,8 +36,9 @@ public class GestorEstacionVTV {
                 //numero,provincia,ciudad,direccion,telefono,correo
                 if (datos.length == 6) { //si tiene todos los datos
                     int num=Integer.parseInt(datos[0].trim());
-                    String provincia = datos[1].trim();
-                    String ciudad = datos[2].trim();
+                    String ciudad = datos[1].trim();
+                    String provincia = datos[2].trim();
+
                     String direccion = datos[3].trim();
                     String telefono = datos[4].trim();
                     String correo = datos[5].trim();

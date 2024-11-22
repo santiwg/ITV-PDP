@@ -55,7 +55,7 @@ public class GestorCliente implements InterfazGestor {
                     listaClientes.add(new Cliente(nombre,apellido,fechaNacimiento,correo,domicilio,nroTelefono,tipoDocumento,nroDocumento));
                 }
                 else {
-                    System.out.println("Formato incorrecto en la línea: " + linea);
+                    System.out.println("Formato incorrecto en archivo de clientes");
                 }
             }
         } catch (IOException e) {

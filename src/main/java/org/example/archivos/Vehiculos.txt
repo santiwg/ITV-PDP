@@ -1,3 +1,4 @@
 patente,marca,modelo,nroChasis,anioFabricacion,kilometros,tipoCombustible,cantidadEjes,tipoVehiculo
 DDH893,TWINGO,RENAULT,JDCHOCNEW0N93283H9,2024,999950.0,NAFTA,0,Auto
 BCBCR,URBUIRB,IBCRYREY,BCYRYYR Y,2024,34.0,UIBFRUIRWB,3,Auto
+DDH894,VBITBYT,VBYBY,NUR,33,33.0,44,33,Moto
