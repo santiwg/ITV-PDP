@@ -5,9 +5,10 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import org.example.interfaces.InterfazGestor;
 import org.example.modelos.*;
 
-public class GestorRevision {
+public class GestorRevision implements InterfazGestor {
     private ArrayList<Revision> listaRevisiones = new ArrayList<Revision>();
     private GestorVehiculo gestorVehiculo;
     private GestorCliente gestorCliente;
@@ -127,10 +128,9 @@ public class GestorRevision {
         cargarEnArchivo("src/main/java/org/example/archivos/Revisiones.txt",r);
     }
 
-    public Revision buscar(int num) {
-        return listaRevisiones.stream().filter(r -> r.getNroRevision() == num).findFirst().orElse(null);
+    public Revision buscar(String num) {
+        return listaRevisiones.stream().filter(r -> r.getNroRevision() == Integer.parseInt(num)).findFirst().orElse(null);
     }
-
 
     public ArrayList<Revision> buscarRevisionesCliente(String numDocumento) {
         return this.listaRevisiones.stream().filter(r -> r.getCliente().getNroDocumento().equals(numDocumento)).collect(Collectors.toCollection(ArrayList::new));

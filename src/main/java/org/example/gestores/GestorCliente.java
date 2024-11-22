@@ -1,5 +1,6 @@
 package org.example.gestores;
 
+import org.example.interfaces.InterfazGestor;
 import org.example.modelos.Cliente;
 
 
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 
 
 
-public class GestorCliente {
+public class GestorCliente implements InterfazGestor {
     private ArrayList<Cliente> listaClientes = new ArrayList<>();
 
     public GestorCliente(ArrayList<Cliente> listaClientes) {

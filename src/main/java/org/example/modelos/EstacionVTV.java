@@ -59,6 +59,6 @@ public class EstacionVTV {
 
     @Override
     public String toString() {
-        return "EstacionVTV:" +numero+". "+ciudad+ ',' +provincia ;
+        return numero+". "+ciudad+ ',' +provincia ;
     }
 }
