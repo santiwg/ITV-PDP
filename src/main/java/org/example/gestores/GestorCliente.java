@@ -46,13 +46,12 @@ public class GestorCliente {
                     LocalDate fechaNacimiento=LocalDate.of(anioNacimiento,mesNacimiento,diaNacimiento);
                     String correo = datos[3].trim();
                     String domicilio = datos[4].trim();
-                    int nroTelefono = Integer.parseInt(datos[5].trim());
+                    String nroTelefono = datos[5].trim();
                     String tipoDocumento = datos[6].trim();
                     String nroDocumento = datos[7].trim();
 
                     // Crea la instancia de la clase con los datos leídos
-                    Cliente cliente = new Cliente(nombre,apellido,fechaNacimiento,correo,domicilio,nroTelefono,tipoDocumento,nroDocumento);
-                    listaClientes.add(cliente);
+                    listaClientes.add(new Cliente(nombre,apellido,fechaNacimiento,correo,domicilio,nroTelefono,tipoDocumento,nroDocumento));
                 }
                 else {
                     System.out.println("Formato incorrecto en la línea: " + linea);
@@ -62,10 +61,10 @@ public class GestorCliente {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
     }
-    public void agregar(String nombre, String apellido,LocalDate fechaNacimiento, String correo, String domicilio, int nroTelefono, String tipoDocumento, String nroDocumento) {
+    public void agregar(String nombre, String apellido,LocalDate fechaNacimiento, String correo, String domicilio, String nroTelefono, String tipoDocumento, String nroDocumento) {
         Cliente c = new Cliente(nombre,apellido,fechaNacimiento,correo,domicilio,nroTelefono,tipoDocumento,nroDocumento);
         listaClientes.add(c);
-        cargarEnArchivo("src/main/java/org/example/Clientes.txt",c);
+        cargarEnArchivo("src/main/java/org/example/archivos/Clientes.txt",c);
     }
     public void cargarEnArchivo(String archivo, Cliente cliente) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true))) {
@@ -82,5 +81,6 @@ public class GestorCliente {
     public Cliente buscar(String doc) {
         return listaClientes.stream().filter(c -> c.getNroDocumento().equals(doc)).findFirst().orElse(null);
     }
+
 
 }

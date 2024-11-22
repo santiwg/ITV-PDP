@@ -20,6 +20,7 @@ public class Revision {
     public Revision() {
     }
 
+   //yo a este constructor lo sacaría
     public Revision(int nroRevision, Cliente cliente, Vehiculo vehiculo, Medicion medicion, DefectoRevision defecto,Oblea oblea, LocalDate fechaAlta, String resultado, LocalDate fechaVencimiento, Empleado supervisor, EstacionVTV estacion, Cobro pago, DefectoVisual defectoVisual) {
         this.nroRevision = nroRevision;
         this.cliente = cliente;
@@ -36,12 +37,12 @@ public class Revision {
         this.defectoVisual = defectoVisual;
     }
 
-    public Revision(int nroRevision, Cliente cliente, Vehiculo vehiculo, EstacionVTV estacion) {
+    public Revision(int nroRevision, Cliente cliente, Vehiculo vehiculo, EstacionVTV estacion,LocalDate fechaAlta) {
         this.nroRevision = nroRevision;
         this.cliente = cliente;
         this.vehiculo = vehiculo;
         this.estacion = estacion;
-        this.fechaAlta = LocalDate.now();
+        this.fechaAlta = fechaAlta;
     }
 
     public int getNroRevision() {
@@ -120,17 +121,17 @@ public class Revision {
     }
 
     public boolean asignarOblea(Vehiculo v){
-        //esta es una funcionalidad de otro sistema, no se la implementa aquí
+        //esta funcionalidad no se implementa aquí
         return true;
     }
 
     public boolean calcularResultado(Vehiculo v){
-        //esta es una funcionalidad de otro sistema, no se la implementa aquí
+        //esta funcionalidad no se implementa aquí
         return true;
     }
 
     public boolean emitirInforme(Vehiculo v){
-        //esta es una funcionalidad de otro sistema, no se la implementa aquí
+        //esta funcionalidad no se implementa aquí
         return true;
     }
 

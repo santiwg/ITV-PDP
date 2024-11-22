@@ -68,7 +68,7 @@ public class RegistrarCliente extends JFrame {
                     }
                     String correo = caCorreo.getText().isEmpty() ? null : caCorreo.getText().toUpperCase();
                     String domicilio = caDomicilio.getText().isEmpty() ? null : caDomicilio.getText().toUpperCase();
-                    int nroTelefono = Integer.parseInt(caNroTelefono.getText());
+                    String nroTelefono = caNroTelefono.getText().isEmpty() ? null : caNroTelefono.getText().toUpperCase();;
                     String tipoDocumento = caTipoDocumento.getText().isEmpty() ? null : caTipoDocumento.getText().toUpperCase();
                     String nroDocumento = caNroDocumento.getText().isEmpty() ? null : caNroDocumento.getText().toUpperCase();
 

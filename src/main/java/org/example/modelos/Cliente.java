@@ -21,7 +21,11 @@ public class Cliente extends Persona{
         this.turno = turno;
     }*/
 
-    public Cliente(String nombre, String apellido, LocalDate fechaNacimiento, String correo, String domicilio, int nroTelefono, String tipoDocumento, String nroDocumento) {
+    public Cliente(){
+        super();
+
+    }
+    public Cliente(String nombre, String apellido, LocalDate fechaNacimiento, String correo, String domicilio, String nroTelefono, String tipoDocumento, String nroDocumento) {
         super(nombre, apellido, fechaNacimiento, correo, domicilio, nroTelefono, tipoDocumento, nroDocumento);
     }
 

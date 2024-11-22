@@ -60,7 +60,7 @@ public class ConsultarCliente extends JFrame{
                     caEdad.setText((c.calcularEdad())+ " años");
                     caCorreo.setText(c.getCorreo());
                     caDomicilio.setText(c.getDomicilio());
-                    caTelefono.setText(Integer.toString(c.getNroTelefono()));
+                    caTelefono.setText((c.getNroTelefono()));
                     caTipoDoc.setText(c.getTipoDocumento());
 
                 } catch (IllegalArgumentException error) {

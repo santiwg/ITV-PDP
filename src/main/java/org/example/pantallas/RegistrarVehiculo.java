@@ -49,15 +49,16 @@ public class RegistrarVehiculo extends JFrame {
 
 
         DefaultComboBoxModel<TipoVehiculo> tipos = new DefaultComboBoxModel<>();
-        for (TipoVehiculo t : gestorVehiculo.getGestorTV().getListaTiposVehiculo()) {
+        gestorVehiculo.getGestorTV().getListaTiposVehiculo().stream().forEach(t->tipos.addElement(t));
+        /*for (TipoVehiculo t : gestorVehiculo.getGestorTV().getListaTiposVehiculo()) {
             tipos.addElement(t);
-        }
+        }*/
         comboTipos.setModel(tipos);
         comboTipos.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                caTipo.setText(comboTipos.getSelectedItem().toString());
+
             }
         });
 

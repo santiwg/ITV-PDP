@@ -1,6 +1,7 @@
 package org.example.pantallas;
 
 import org.example.gestores.GestorCliente;
+import org.example.gestores.GestorRevision;
 import org.example.gestores.GestorVehiculo;
 
 import javax.swing.*;
@@ -18,12 +19,14 @@ public class PantallaPrincipal extends JFrame {
     private JButton botConsCl;
     private GestorVehiculo gVehiculo;
     private GestorCliente gCliente;
+    private GestorRevision gRevision;
 
 
 
-    public PantallaPrincipal(GestorVehiculo gVehiculo, GestorCliente gCliente) throws HeadlessException {
+    public PantallaPrincipal(GestorVehiculo gVehiculo, GestorCliente gCliente, GestorRevision gRevision) throws HeadlessException {
         this.gVehiculo = gVehiculo;
         this.gCliente=gCliente;
+        this.gRevision=gRevision;
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
         setTitle("Pantalla Principal");  //configurar el título de la ventana
         setSize(420,500); //configurar el tamaño de la ventana
@@ -57,6 +60,13 @@ public class PantallaPrincipal extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 new RegistrarCliente(gCliente);
+            }
+        });
+        botRegRev.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                new RegistrarRevision(gRevision);
             }
         });
     }

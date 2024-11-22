@@ -9,11 +9,16 @@ public abstract class Persona {
     protected LocalDate fechaNacimiento;
     protected String correo;
     protected String domicilio;
-    protected int nroTelefono;
+    protected String nroTelefono;
     protected String tipoDocumento;
     protected String nroDocumento;
 
-    public Persona(String nombre, String apellido, LocalDate fechaNacimiento, String correo, String domicilio, int nroTelefono, String tipoDocumento, String nroDocumento) {
+
+    public Persona(){
+
+    }
+
+    public Persona(String nombre, String apellido, LocalDate fechaNacimiento, String correo, String domicilio, String nroTelefono, String tipoDocumento, String nroDocumento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
@@ -64,11 +69,11 @@ public abstract class Persona {
         this.domicilio = domicilio;
     }
 
-    public int getNroTelefono() {
+    public String getNroTelefono() {
         return nroTelefono;
     }
 
-    public void setNroTelefono(int nroTelefono) {
+    public void setNroTelefono(String nroTelefono) {
         this.nroTelefono = nroTelefono;
     }
 

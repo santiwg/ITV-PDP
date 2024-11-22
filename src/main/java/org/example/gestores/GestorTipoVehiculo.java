@@ -26,13 +26,11 @@ private ArrayList<TipoVehiculo> listaTiposVehiculo=new ArrayList<>();
                     String nombre = datos[0].trim();
                     double peso = Double.parseDouble(datos[1].trim());
                     String descripcion = datos[2].trim();
-                    TipoVehiculo tipo=new TipoVehiculo(nombre,peso,descripcion);
-                    listaTiposVehiculo.add(tipo);
+                    agregar(new TipoVehiculo(nombre,peso,descripcion));
                 } else if (datos.length == 2){ //si no tiene descripción usa esta opción
                     String nombre = datos[0].trim();
                     double peso = Double.parseDouble(datos[1].trim());
-                    TipoVehiculo tipo=new TipoVehiculo(nombre,peso);
-                    listaTiposVehiculo.add(tipo);
+                    agregar(new TipoVehiculo(nombre,peso));
                 }
             }
         } catch (IOException e) {

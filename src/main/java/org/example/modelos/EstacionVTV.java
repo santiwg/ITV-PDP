@@ -5,13 +5,13 @@ public class EstacionVTV {
     private String provincia;
     private String ciudad;
     private String direccion;
-    private int telefono;
+    private String telefono;
     private String correo;
 
     public EstacionVTV() {
     }
 
-    public EstacionVTV(int numero, String provincia, String ciudad, String direccion, int telefono, String correo) {
+    public EstacionVTV(int numero, String provincia, String ciudad, String direccion, String telefono, String correo) {
         this.numero = numero;
         this.provincia = provincia;
         this.ciudad = ciudad;
@@ -44,10 +44,10 @@ public class EstacionVTV {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
     public String getCorreo() {
@@ -55,5 +55,10 @@ public class EstacionVTV {
     }
     public void setCorreo(String correo) {
         this.correo = correo;
+    }
+
+    @Override
+    public String toString() {
+        return "EstacionVTV:" +numero+". "+ciudad+ ',' +provincia ;
     }
 }

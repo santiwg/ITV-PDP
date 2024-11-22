@@ -6,15 +6,16 @@ import org.example.modelos.EstacionVTV;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.time.LocalDate;
 
 public class RegistrarRevision extends JFrame {
     private JPanel panelPrincipal;
-    private JTextField patente;
-    private JLabel labelPatente;
-    private JLabel labelEstacion;
+    private JTextField caPatente;
+    private JLabel etPatente;
+    private JLabel etEstacion;
     private JComboBox listaEstaciones;
-    private JLabel labelCliente;
-    private JTextField cliente;
+    private JLabel etCliente;
+    private JTextField caCliente;
     private JButton registrar;
     public GestorRevision gestorRevision;
 
@@ -29,7 +30,7 @@ public class RegistrarRevision extends JFrame {
         setVisible(true);
 
         DefaultComboBoxModel <EstacionVTV> estaciones = new DefaultComboBoxModel<>();
-        for (EstacionVTV estacion: gestorRevision.getGestorEstacionVTV().getListaEstaciones()) { // Implementar gestor de estaciones para poder mostrar las estaciones disponibles en la JCombobox
+        for (EstacionVTV estacion: gestorRevision.getGestorEstacionVTV().getListaEstaciones()) {
             estaciones.addElement(estacion);
         }
         listaEstaciones.setModel(estaciones);
@@ -41,8 +42,8 @@ public class RegistrarRevision extends JFrame {
                 super.mouseClicked(e);
 
                 try {
-                    String rPatente = patente.getText().isEmpty() ? null : patente.getText().toUpperCase();
-                    String rCliente = cliente.getText().isEmpty() ? null : cliente.getText().toUpperCase();
+                    String rPatente = caPatente.getText().isEmpty() ? null : caPatente.getText().toUpperCase();
+                    String rCliente = caCliente.getText().isEmpty() ? null : caCliente.getText().toUpperCase();
                     EstacionVTV rEstacion = listaEstaciones.getSelectedItem() == null ? null : (EstacionVTV) listaEstaciones.getSelectedItem();
 
                     if (rPatente == null || rCliente == null || rEstacion == null) {
@@ -55,7 +56,8 @@ public class RegistrarRevision extends JFrame {
                         throw new IllegalArgumentException("No existe un cliente registrado con ese N° de documento.");
                     }
 
-                    gestorRevision.agregarRevision(gestorRevision.getNumeroRevision(),gestorRevision.getGestorCliente().buscar(rCliente), gestorRevision.getGestorVehiculo().buscar(rPatente), rEstacion);
+                    gestorRevision.agregarRevision(gestorRevision.getNumeroRevision(),gestorRevision.getGestorCliente().buscar(rCliente),
+                            gestorRevision.getGestorVehiculo().buscar(rPatente), rEstacion, LocalDate.now());
                     new Mensaje("Revisión registrada.");
                 } catch (NumberFormatException error) {
                     new Mensaje("Error al intentar registrar la revisión: \n Puede que haya ingresado caracteres en lugar de números.");

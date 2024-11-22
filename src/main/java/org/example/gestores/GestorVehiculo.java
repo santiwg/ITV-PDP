@@ -55,8 +55,7 @@ private GestorTipoVehiculo gestorTV;
                     TipoVehiculo tipoVehiculo = gestorTV.buscar(nombreTipoVehiculo);
 
                     // Crea la instancia de la clase con los datos leídos
-                    Vehiculo vehiculo = new Vehiculo(tipoVehiculo,tipoCombustible,patente,nroChasis,modelo,marca,kilometros,anioFabricacion,cantidadEjes );
-                    listaVehiculos.add(vehiculo);
+                    listaVehiculos.add(new Vehiculo(tipoVehiculo,tipoCombustible,patente,nroChasis,modelo,marca,kilometros,anioFabricacion,cantidadEjes));
                 }
                 else {
                     System.out.println("Formato incorrecto en la línea: " + linea);
@@ -69,7 +68,7 @@ private GestorTipoVehiculo gestorTV;
     public void agregar(TipoVehiculo tipovehiculo, String tipoCombustible, String patente, String nroChasis, String modelo, String marca, double kilometros, int anioFabricacion, int cantEjes) {
         Vehiculo v=new Vehiculo(tipovehiculo,tipoCombustible,patente,nroChasis,modelo,marca,kilometros,anioFabricacion,cantEjes);
         listaVehiculos.add(v);
-        cargarEnArchivo("src/main/java/org/example/Vehiculos.txt",v);
+        cargarEnArchivo("src/main/java/org/example/archivos/Vehiculos.txt",v);
     }
     public void cargarEnArchivo(String archivo, Vehiculo v) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true))) {
@@ -85,4 +84,5 @@ private GestorTipoVehiculo gestorTV;
     public Vehiculo buscar(String pat) {
         return listaVehiculos.stream().filter(v -> v.getPatente().equals(pat)).findFirst().orElse(null);
     }
+
 }

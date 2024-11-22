@@ -25,7 +25,7 @@
             </constraints>
             <properties>
               <hideActionText value="false"/>
-              <text value="Registrar Revisión"/>
+              <text value="Registrar Inicio de Revisión"/>
             </properties>
           </component>
           <component id="b059e" class="javax.swing.JButton" binding="botRegCl">
