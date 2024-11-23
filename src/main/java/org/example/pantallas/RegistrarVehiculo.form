@@ -172,6 +172,8 @@
               <grid row="12" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <horizontalTextPosition value="11"/>
+              <icon value="images/registrar.png"/>
               <text value="Registrar"/>
             </properties>
           </component>
@@ -191,12 +193,12 @@
               <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
-          <component id="8bbe9" class="javax.swing.JButton" binding="vaciarCampoButton" default-binding="true">
+          <component id="8bbe9" class="javax.swing.JButton" binding="limpiarCamposButton" default-binding="true">
             <constraints>
-              <grid row="10" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="10" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Vaciar Campo"/>
+              <text value="Limpiar campos"/>
             </properties>
           </component>
         </children>

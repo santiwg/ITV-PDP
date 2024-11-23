@@ -29,7 +29,7 @@ public class RegistrarVehiculo extends Pantalla {
     private JLabel etEjes;
     private JLabel etSeleccioTipo;
     private JComboBox<TipoVehiculo> comboTipos;
-    private JButton vaciarCampoButton;
+    private JButton limpiarCamposButton;
     private GestorVehiculo gestorVehiculo;
 
 
@@ -39,9 +39,10 @@ public class RegistrarVehiculo extends Pantalla {
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
 
         setTitle("Registrar Vehiculo");  //configurar el título de la ventana
-        setSize(420,360); //configurar el tamaño de la ventana
+        setSize(520,500); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
+        colorearBotones(panelPrincipal);
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
 
 
@@ -92,19 +93,23 @@ public class RegistrarVehiculo extends Pantalla {
 
                     gestorVehiculo.agregar(tipo,tipoCombustible,patente,nroChasis,modelo,marca,
                             kilometros,anioFabricacion,cantEjes);
-                    new Mensaje("Vehiculo Registrado");
+                    JOptionPane.showMessageDialog(null,"Vehiculo Registrado","",JOptionPane.INFORMATION_MESSAGE);
                 } catch (NumberFormatException error) {
-                    new Mensaje("Error al intentar registrar el vehículo: \n Puede que haya ingresado caracteres en lugar de números.");
+                    JOptionPane.showMessageDialog(null,"Error al intentar registrar el vehículo: \n Puede que haya ingresado caracteres en lugar de números.","Error",JOptionPane.ERROR_MESSAGE);
                 } catch (IllegalArgumentException error) {
-                    new Mensaje("Error al intentar registrar el vehículo: \n"+error.getMessage());
+                    JOptionPane.showMessageDialog(null,"Error al intentar registrar el vehículo: \n"+error.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
                 } catch (Exception error) {
-                    new Mensaje("Error al intentar registrar el vehículo ");
+                    JOptionPane.showMessageDialog(null,"Error al intentar registrar el vehículo","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
 
+        limpiarCamposButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                vaciarCampos(panelPrincipal);
+            }
+        });
     }
-    /*public static void main(String[] args){
-        new RegistrarVehiculo(); //no lo guardo en ninguna variable, cuando se ejecuta el main me crea el objeto que es la UI
-    }*/
 }

@@ -36,9 +36,10 @@ public class ConsultarVehiculo extends Pantalla{
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
 
         setTitle("Consultar Vehiculo");  //configurar el título de la ventana
-        setSize(420,350); //configurar el tamaño de la ventana
+        setSize(400,400); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
+        colorearBotones(panelPrincipal);
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
 
         buscar.addMouseListener(new MouseAdapter() {
@@ -63,9 +64,9 @@ public class ConsultarVehiculo extends Pantalla{
                     caModelo.setText(v.getModelo());
 
                 } catch (IllegalArgumentException error) {
-                    new Mensaje("Error al buscar el vehículo: \n "+error.getMessage());
+                    JOptionPane.showMessageDialog(null,"Error al buscar el vehículo: \n "+error.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
                 } catch (Exception error) {
-                    new Mensaje("Error al buscar el vehículo "+error.getMessage());
+                    JOptionPane.showMessageDialog(null,"Error al buscar el vehículo "+error.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
 

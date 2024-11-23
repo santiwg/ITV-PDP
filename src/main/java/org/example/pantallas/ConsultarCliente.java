@@ -39,6 +39,7 @@ public class ConsultarCliente extends Pantalla{
         setSize(400,400); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
+        colorearBotones(panelPrincipal);
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
 
         buscar.addMouseListener(new MouseAdapter() {
@@ -64,9 +65,9 @@ public class ConsultarCliente extends Pantalla{
                     caTipoDoc.setText(c.getTipoDocumento());
 
                 } catch (IllegalArgumentException error) {
-                    new Mensaje("Error al buscar el cliente:\n"+error.getMessage());
+                    JOptionPane.showMessageDialog(null,"Error al buscar el cliente:\n"+error.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
                 } catch (Exception error) {
-                    new Mensaje("Error al buscar el cliente"+error.getMessage());
+                    JOptionPane.showMessageDialog(null,"Error al buscar el cliente"+error.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
 

@@ -34,11 +34,11 @@ public class ConsultarRevision extends Pantalla {
     public ConsultarRevision(GestorRevision gestorRevision) {
         this.gestorRevision = gestorRevision;
         setContentPane(panelPrincipal);
-
         setTitle("Consultar Revisiones");  // Configurar el título de la ventana
         setSize(520, 500); // Configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Definir el comportamiento de cierre
         setLocationRelativeTo(null); // Centrar la ventana
+        colorearBotones(panelPrincipal);
         setVisible(true); // Mostrar la ventana
 
         BBuscar.addMouseListener(new MouseAdapter() {

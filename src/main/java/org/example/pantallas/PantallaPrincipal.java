@@ -16,6 +16,7 @@ public class PantallaPrincipal extends Pantalla {
     private JButton botRegRev;
     private JButton botRegVe;
     private JButton botConsCl;
+    private JLabel etLogo;
     private GestorVehiculo gVehiculo;
     private GestorCliente gCliente;
     private GestorRevision gRevision;
@@ -27,11 +28,11 @@ public class PantallaPrincipal extends Pantalla {
         this.gRevision=gRevision;
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
         setTitle("Applus+");  //configurar el título de la ventana
-        setSize(420,500); //configurar el tamaño de la ventana
+        setSize(600,600); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
-        colorearPantalla(panelPrincipal);
+        colorearBotones(panelPrincipal);
         botRegVe.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

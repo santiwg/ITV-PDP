@@ -13,11 +13,17 @@ public abstract class Pantalla extends JFrame {
 
     }
 
-    public void colorearPantalla(Container panel) {
-        for (Component componente : panel.getComponents()) {
-            if (componente instanceof JButton) {
-                componente.setBackground(Color.ORANGE);
-            }
-        }
+    public void colorearBotones(Container panel) {
+
+        Arrays.stream(panel.getComponents())
+                .filter(component -> component instanceof JButton || component instanceof JComboBox)
+                .forEach(component ->  {
+                    if (component instanceof JButton) {
+                        component.setBackground(new Color(255,167,38));
+                    } else {
+                        component.setBackground(Color.lightGray);
+                    }
+                });
     }
+
 }

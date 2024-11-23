@@ -21,6 +21,8 @@
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <horizontalTextPosition value="11"/>
+          <icon value="images/consultar.png"/>
           <text value="Buscar"/>
         </properties>
       </component>
@@ -28,7 +30,9 @@
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <enabled value="true"/>
+        </properties>
       </component>
       <component id="e5f99" class="javax.swing.JLabel" binding="LNumDoc">
         <constraints>

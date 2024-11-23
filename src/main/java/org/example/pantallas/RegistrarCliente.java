@@ -8,9 +8,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class RegistrarCliente extends Pantalla {
     private JPanel panelPrincipal;
@@ -31,6 +28,7 @@ public class RegistrarCliente extends Pantalla {
     private JLabel etCorreo;
     private JLabel etFechaNacimiento;
     private JLabel etApellido;
+    private JButton limpiarCamposButton;
     private GestorCliente gestorCliente;
 
     public RegistrarCliente(GestorCliente gestorCliente){
@@ -41,6 +39,7 @@ public class RegistrarCliente extends Pantalla {
         setSize(520,500); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
+        colorearBotones(panelPrincipal);
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
 
 
@@ -81,15 +80,22 @@ public class RegistrarCliente extends Pantalla {
                     }
 
                     gestorCliente.agregar(nombre,apellido,fechaNacimiento,correo,domicilio,nroTelefono,tipoDocumento,nroDocumento);
-                    new Mensaje("Cliente Registrado");
+                    JOptionPane.showMessageDialog(null,"Cliente Registrado","",JOptionPane.INFORMATION_MESSAGE);
 
                 } catch (NumberFormatException error) {
-                    new Mensaje("Error al intentar registrar el cliente: \n Puede que haya ingresado caracteres en lugar de números.");
+                    JOptionPane.showMessageDialog(null,"Error al intentar registrar el cliente: \n Puede que haya ingresado caracteres en lugar de números.","Error",JOptionPane.ERROR_MESSAGE);
                 } catch (IllegalArgumentException error) {
-                    new Mensaje("Error al intentar registrar el cliente: \n" + error.getMessage());
+                    JOptionPane.showMessageDialog(null,"Error al intentar registrar el cliente: \n" + error.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
                 } catch (Exception error) {
-                    new Mensaje("Error al intentar registrar el cliente.");
+                    JOptionPane.showMessageDialog(null,"Error al intentar registrar el cliente.","Error",JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        limpiarCamposButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                vaciarCampos(panelPrincipal);
             }
         });
     }

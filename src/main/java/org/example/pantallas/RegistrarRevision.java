@@ -22,7 +22,7 @@ public class RegistrarRevision extends Pantalla {
     private JTextField caCliente;
     private JButton registrar;
     private JLabel etFecha;
-    private JButton vaciarCampoButton;
+    private JButton limpiarCamposButton;
     public GestorRevision gestorRevision;
 
     public RegistrarRevision(GestorRevision gestorRevision) {
@@ -33,6 +33,7 @@ public class RegistrarRevision extends Pantalla {
         setSize(520,300);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        colorearBotones(panelPrincipal);
         setVisible(true);
 
         
@@ -113,11 +114,22 @@ public class RegistrarRevision extends Pantalla {
                 }
             }
         });
+
+        limpiarCamposButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                vaciarCampos(panelPrincipal);
+            }
+        });
+
         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
         Timer timer = new Timer(1000, e -> {
             etFecha.setText(formatoFecha.format(new Date()));
         });
+
         timer.start();
+
     }
 }
