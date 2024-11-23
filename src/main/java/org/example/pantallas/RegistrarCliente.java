@@ -65,7 +65,12 @@ public class RegistrarCliente extends Pantalla {
                     int anioNacimiento = Integer.parseInt(fechaNacimientoArray[2]);
                     LocalDate fechaNacimiento;
                     try {
-                        fechaNacimiento = LocalDate.of(anioNacimiento, mesNacimiento, diaNacimiento);
+                        if (anioNacimiento <= LocalDate.now().getYear()) {
+                            fechaNacimiento = LocalDate.of(anioNacimiento, mesNacimiento, diaNacimiento);
+                        }
+                        else {
+                            throw new IllegalArgumentException("Formato de fecha incorrecto. La fecha ingresada debe ser anterior a la fecha actual.");
+                        }
                     }catch (DateTimeException errorFecha){
                         throw new IllegalArgumentException("Formato de fecha incorrecto. Número de días, meses o años fuera de rango");
                     }

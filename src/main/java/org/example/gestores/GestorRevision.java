@@ -67,15 +67,6 @@ public class GestorRevision implements IGestor {
         return listaRevisiones.size() + 1;
     }
 
-    public void agregarRevision(int nroRevision, Cliente cliente, Vehiculo vehiculo, Medicion medicion,
-                                DefectoRevision defecto, Oblea oblea, LocalDate fechaAlta, String resultado,
-                                LocalDate fechaVencimiento, Empleado supervisor, EstacionVTV estacion, Cobro pago,
-                                DefectoVisual defectoVisual) {
-        Revision r = new Revision(nroRevision, cliente, vehiculo, medicion, defecto, oblea, fechaAlta, resultado,
-                fechaVencimiento, supervisor, estacion, pago, defectoVisual);
-        listaRevisiones.add(r);
-    }
-
 
     public void cargarDatosDesdeArchivo(String archivo){ //solo tenemos en cuenta los atributos que utilizan en los CU
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {

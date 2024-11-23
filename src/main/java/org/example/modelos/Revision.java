@@ -20,22 +20,6 @@ public class Revision {
     public Revision() {
     }
 
-    public Revision(int nroRevision, Cliente cliente, Vehiculo vehiculo, Medicion medicion, DefectoRevision defecto,Oblea oblea, LocalDate fechaAlta, String resultado, LocalDate fechaVencimiento, Empleado supervisor, EstacionVTV estacion, Cobro pago, DefectoVisual defectoVisual) {
-        this.nroRevision = nroRevision;
-        this.cliente = cliente;
-        this.vehiculo = vehiculo;
-        this.medicion = medicion;
-        this.defecto = defecto;
-        this.oblea = oblea;
-        this.fechaAlta = fechaAlta;
-        this.resultado = resultado;
-        this.fechaVencimiento = fechaVencimiento;
-        this.supervisor = supervisor;
-        this.estacion = estacion;
-        this.pago = pago;
-        this.defectoVisual = defectoVisual;
-    }
-
     public Revision(int nroRevision, Cliente cliente, Vehiculo vehiculo, EstacionVTV estacion,LocalDate fechaAlta) {
         this.nroRevision = nroRevision;
         this.cliente = cliente;
