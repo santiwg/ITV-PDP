@@ -4,8 +4,6 @@ import org.example.gestores.GestorVehiculo;
 import org.example.modelos.TipoVehiculo;
 
 import javax.swing.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -31,6 +29,7 @@ public class RegistrarVehiculo extends JFrame {
     private JLabel etEjes;
     private JLabel etSeleccioTipo;
     private JComboBox<TipoVehiculo> comboTipos;
+    private JButton vaciarCampoButton;
     private GestorVehiculo gestorVehiculo;
 
 
@@ -40,7 +39,7 @@ public class RegistrarVehiculo extends JFrame {
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
 
         setTitle("Registrar Vehiculo");  //configurar el título de la ventana
-        setSize(520,500); //configurar el tamaño de la ventana
+        setSize(420,360); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana

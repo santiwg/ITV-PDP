@@ -36,7 +36,7 @@ public class ConsultarVehiculo extends JFrame{
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
 
         setTitle("Consultar Vehiculo");  //configurar el título de la ventana
-        setSize(420,500); //configurar el tamaño de la ventana
+        setSize(420,350); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana

@@ -22,6 +22,7 @@ public class RegistrarRevision extends JFrame {
     private JTextField caCliente;
     private JButton registrar;
     private JLabel etFecha;
+    private JButton vaciarCampoButton;
     public GestorRevision gestorRevision;
 
     public RegistrarRevision(GestorRevision gestorRevision) {
@@ -29,7 +30,7 @@ public class RegistrarRevision extends JFrame {
         setContentPane(panelPrincipal);
 
         setTitle("Registrar revisión");
-        setSize(520,500);
+        setSize(520,300);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
