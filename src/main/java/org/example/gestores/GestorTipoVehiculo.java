@@ -1,6 +1,6 @@
 package org.example.gestores;
 
-import org.example.interfaces.InterfazGestor;
+import org.example.interfaces.IGestor;
 import org.example.modelos.TipoVehiculo;
 
 import java.io.BufferedReader;
@@ -8,14 +8,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GestorTipoVehiculo implements InterfazGestor {
+public class GestorTipoVehiculo implements IGestor {
 private ArrayList<TipoVehiculo> listaTiposVehiculo=new ArrayList<>();
 
     public GestorTipoVehiculo() {
     }
+
     public void agregar(TipoVehiculo tipo){
         listaTiposVehiculo.add(tipo);
     }
+
     public void cargarDatosDesdeArchivo(String archivo){
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea;
@@ -42,7 +44,6 @@ private ArrayList<TipoVehiculo> listaTiposVehiculo=new ArrayList<>();
     public TipoVehiculo buscar(String tipo) {
         return listaTiposVehiculo.stream().filter(t -> t.getNombre().equals(tipo)).findFirst().orElse(null);
     }
-
 
     public ArrayList<TipoVehiculo> getListaTiposVehiculo() {
         return listaTiposVehiculo;

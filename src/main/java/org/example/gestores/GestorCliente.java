@@ -1,6 +1,6 @@
 package org.example.gestores;
 
-import org.example.interfaces.InterfazGestor;
+import org.example.interfaces.IGestor;
 import org.example.modelos.Cliente;
 
 
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 
 
-public class GestorCliente implements InterfazGestor {
+public class GestorCliente implements IGestor {
     private ArrayList<Cliente> listaClientes = new ArrayList<>();
 
     public GestorCliente(ArrayList<Cliente> listaClientes) {
@@ -28,6 +28,7 @@ public class GestorCliente implements InterfazGestor {
     public void setListaClientes(ArrayList<Cliente> listaClientes) {
         this.listaClientes = listaClientes;
     }
+
    public void cargarDatosDesdeArchivo(String archivo){
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea;
@@ -79,9 +80,8 @@ public class GestorCliente implements InterfazGestor {
             System.out.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
+
     public Cliente buscar(String doc) {
         return listaClientes.stream().filter(c -> c.getNroDocumento().equals(doc)).findFirst().orElse(null);
     }
-
-
 }

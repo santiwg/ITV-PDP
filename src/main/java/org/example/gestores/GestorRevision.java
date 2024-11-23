@@ -5,10 +5,10 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import org.example.interfaces.InterfazGestor;
+import org.example.interfaces.IGestor;
 import org.example.modelos.*;
 
-public class GestorRevision implements InterfazGestor {
+public class GestorRevision implements IGestor {
     private ArrayList<Revision> listaRevisiones = new ArrayList<Revision>();
     private GestorVehiculo gestorVehiculo;
     private GestorCliente gestorCliente;
@@ -90,7 +90,7 @@ public class GestorRevision implements InterfazGestor {
                     int nroRevision = Integer.parseInt(datos[0].trim());
                     Cliente cliente = gestorCliente.buscar(datos[1].trim());
                     Vehiculo vehiculo=gestorVehiculo.buscar(datos[2].trim());
-                    EstacionVTV estacionVTV = gestorEstacionVTV.buscar(Integer.parseInt(datos[3].trim()));
+                    EstacionVTV estacionVTV = gestorEstacionVTV.buscar(datos[3].trim());
                     List<Integer> fecha = Arrays.stream(datos[4].trim().split("/"))
                             .map(Integer::parseInt).collect(Collectors.toList());
                     int diaNacimiento = fecha.get(0);

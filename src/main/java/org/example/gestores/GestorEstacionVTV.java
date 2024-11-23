@@ -1,14 +1,14 @@
 package org.example.gestores;
 
+import org.example.interfaces.IGestor;
 import org.example.modelos.EstacionVTV;
-import org.example.modelos.TipoVehiculo;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GestorEstacionVTV {
+public class GestorEstacionVTV implements IGestor {
     private ArrayList<EstacionVTV> listaEstaciones=new ArrayList<>();
 
     public GestorEstacionVTV() {
@@ -50,7 +50,7 @@ public class GestorEstacionVTV {
         }
     }
 
-    public EstacionVTV buscar(Integer num) {
-        return listaEstaciones.stream().filter(t -> t.getNumero()==(num)).findFirst().orElse(null);
+    public EstacionVTV buscar(String num) {
+        return listaEstaciones.stream().filter(t -> t.getNumero()==(Integer.parseInt(num))).findFirst().orElse(null);
     }
 }
