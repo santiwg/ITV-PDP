@@ -6,6 +6,8 @@ import org.example.modelos.Vehiculo;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.*;
+import java.awt.*;
 
 public class ConsultarVehiculo extends Pantalla{
     private JTextField caNroChasis;
@@ -41,6 +43,10 @@ public class ConsultarVehiculo extends Pantalla{
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
         colorearBotones(panelPrincipal);
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
+
+        // Cambiar el ícono de la ventana
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/consultar-vehiculo.png"));
+        setIconImage(icon);
 
         buscar.addMouseListener(new MouseAdapter() {
             @Override

@@ -4,6 +4,20 @@ import org.example.gestores.*;
 import org.example.pantallas.PantallaPrincipal;
 
 public class Main {
+
+    /* INTEGRANTES DEL GRUPO:
+     *
+     * Barrionuevo Halavacs, Imanol
+     * Broilo, Mateo
+     * Correa, Valentin
+     * Díaz, Gabriel
+     * Gambino, Tomas
+     * Gomez, Andres
+     * Gonzalez Meyer, Lorenzo
+     * Letona, Mateo
+     * Wursten Gill, Santiago
+     */
+
     public static void main(String[] args) {
         GestorTipoVehiculo gestorTipoVehiculo=new GestorTipoVehiculo();
         gestorTipoVehiculo.cargarDatosDesdeArchivo("src/main/java/org/example/archivos/Tipos Vehículo.txt");

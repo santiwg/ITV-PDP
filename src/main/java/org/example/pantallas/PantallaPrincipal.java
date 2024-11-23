@@ -5,6 +5,7 @@ import org.example.gestores.GestorRevision;
 import org.example.gestores.GestorVehiculo;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -33,6 +34,14 @@ public class PantallaPrincipal extends Pantalla {
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
         colorearBotones(panelPrincipal);
+
+        // Cargar la imagen del ícono
+        ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("images/applus-icono-ventana.png"));
+        // Redimensionar la imagen al tamaño deseado (ejemplo: 32x32)
+        Image scaledIcon = originalIcon.getImage().getScaledInstance(32, 32, Image.SCALE_SMOOTH);
+        // Establecer el ícono redimensionado
+        setIconImage(scaledIcon);
+
         botRegVe.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -77,10 +86,4 @@ public class PantallaPrincipal extends Pantalla {
             }
         });
     }
-
-
-
-      /*public static void main(String[] args){
-        new PantallaPrincipal(); //no lo guardo en ninguna variable, cuando se ejecuta el main me crea el objeto que es la UI
-    }*/
 }

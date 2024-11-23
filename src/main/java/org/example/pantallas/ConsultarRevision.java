@@ -4,6 +4,7 @@ import org.example.gestores.GestorRevision;
 import org.example.modelos.Revision;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -40,6 +41,10 @@ public class ConsultarRevision extends Pantalla {
         setLocationRelativeTo(null); // Centrar la ventana
         colorearBotones(panelPrincipal);
         setVisible(true); // Mostrar la ventana
+
+        // Cambiar el ícono de la ventana
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/consultar-revision.png"));
+        setIconImage(icon);
 
         BBuscar.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {

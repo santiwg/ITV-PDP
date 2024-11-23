@@ -4,6 +4,7 @@ import org.example.gestores.GestorCliente;
 
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.time.DateTimeException;
@@ -42,6 +43,9 @@ public class RegistrarCliente extends Pantalla {
         colorearBotones(panelPrincipal);
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
 
+        // Cambiar el ícono de la ventana
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/registrar-cliente.png"));
+        setIconImage(icon);
 
         registrar.addMouseListener(new MouseAdapter() {
             @Override

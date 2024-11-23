@@ -4,6 +4,7 @@ import org.example.gestores.GestorRevision;
 import org.example.modelos.EstacionVTV;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
@@ -36,6 +37,9 @@ public class RegistrarRevision extends Pantalla {
         colorearBotones(panelPrincipal);
         setVisible(true);
 
+        // Cambiar el ícono de la ventana
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/registrar-revision.png"));
+        setIconImage(icon);
         
         DefaultComboBoxModel <EstacionVTV> estaciones = new DefaultComboBoxModel<>();
         for (EstacionVTV estacion: gestorRevision.getGestorEstacionVTV().getListaEstaciones()) {

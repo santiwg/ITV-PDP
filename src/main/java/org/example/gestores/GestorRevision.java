@@ -67,7 +67,6 @@ public class GestorRevision implements IGestor {
         return listaRevisiones.size() + 1;
     }
 
-    //yo lo sacaria a este
     public void agregarRevision(int nroRevision, Cliente cliente, Vehiculo vehiculo, Medicion medicion,
                                 DefectoRevision defecto, Oblea oblea, LocalDate fechaAlta, String resultado,
                                 LocalDate fechaVencimiento, Empleado supervisor, EstacionVTV estacion, Cobro pago,

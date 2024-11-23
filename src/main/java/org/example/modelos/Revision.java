@@ -20,7 +20,6 @@ public class Revision {
     public Revision() {
     }
 
-   //yo a este constructor lo sacaría
     public Revision(int nroRevision, Cliente cliente, Vehiculo vehiculo, Medicion medicion, DefectoRevision defecto,Oblea oblea, LocalDate fechaAlta, String resultado, LocalDate fechaVencimiento, Empleado supervisor, EstacionVTV estacion, Cobro pago, DefectoVisual defectoVisual) {
         this.nroRevision = nroRevision;
         this.cliente = cliente;

@@ -4,6 +4,7 @@ import org.example.gestores.GestorCliente;
 import org.example.modelos.Cliente;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -36,11 +37,15 @@ public class ConsultarCliente extends Pantalla{
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
 
         setTitle("Consultar Cliente");  //configurar el título de la ventana
-        setSize(400,400); //configurar el tamaño de la ventana
+        setSize(520,400); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
         colorearBotones(panelPrincipal);
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
+
+        // Cambiar el ícono de la ventana
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/consultar-cliente.png"));
+        setIconImage(icon);
 
         buscar.addMouseListener(new MouseAdapter() {
             @Override
@@ -52,7 +57,6 @@ public class ConsultarCliente extends Pantalla{
                         throw new IllegalArgumentException("No se ha encontrado el cliente.");
                     }
 
-                    /*COMPLETAR*/
                     Cliente c = gCliente.buscar(caNumDni.getText().toUpperCase());
                     caNumDni.setText(c.getNroDocumento());
                     caNombre.setText(String.valueOf(c.getNombre()));

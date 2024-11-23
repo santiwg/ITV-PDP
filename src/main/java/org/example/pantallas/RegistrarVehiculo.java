@@ -4,6 +4,7 @@ import org.example.gestores.GestorVehiculo;
 import org.example.modelos.TipoVehiculo;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -45,14 +46,13 @@ public class RegistrarVehiculo extends Pantalla {
         colorearBotones(panelPrincipal);
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
 
-
-
+        // Cambiar el ícono de la ventana
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("images/registrar-vehiculo.png"));
+        setIconImage(icon);
 
         DefaultComboBoxModel<TipoVehiculo> tipos = new DefaultComboBoxModel<>();
         gestorVehiculo.getGestorTV().getListaTiposVehiculo().stream().forEach(t->tipos.addElement(t));
-        /*for (TipoVehiculo t : gestorVehiculo.getGestorTV().getListaTiposVehiculo()) {
-            tipos.addElement(t);
-        }*/
+
         comboTipos.setModel(tipos);
         comboTipos.addMouseListener(new MouseAdapter() {
             @Override
