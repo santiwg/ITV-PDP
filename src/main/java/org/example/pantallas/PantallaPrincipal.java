@@ -5,11 +5,10 @@ import org.example.gestores.GestorRevision;
 import org.example.gestores.GestorVehiculo;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class PantallaPrincipal extends JFrame {
+public class PantallaPrincipal extends Pantalla {
     private JPanel panelPrincipal;
     private JButton botConsVe;
     private JButton botRegCl;
@@ -22,17 +21,17 @@ public class PantallaPrincipal extends JFrame {
     private GestorRevision gRevision;
 
 
-
-    public PantallaPrincipal(GestorVehiculo gVehiculo, GestorCliente gCliente, GestorRevision gRevision) throws HeadlessException {
+    public PantallaPrincipal(GestorVehiculo gVehiculo, GestorCliente gCliente, GestorRevision gRevision) {
         this.gVehiculo = gVehiculo;
         this.gCliente=gCliente;
         this.gRevision=gRevision;
         setContentPane(panelPrincipal); //este linea va si o si, sino no podemos trabajar con el panel armado
-        setTitle("Pantalla Principal");  //configurar el título de la ventana
-        setSize(520,500); //configurar el tamaño de la ventana
+        setTitle("Applus+");  //configurar el título de la ventana
+        setSize(420,500); //configurar el tamaño de la ventana
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //define el comportamiento de cierre (lo que hace cuando se toca la cruz)
         setLocationRelativeTo(null); //indicamos respecto a que se centre, al poner null es respecto al centro.
         setVisible(true); //esto es lo más importante, sin esto no va a abrir la ventana
+        colorearPantalla(panelPrincipal);
         botRegVe.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

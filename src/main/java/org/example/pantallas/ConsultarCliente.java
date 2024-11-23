@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class ConsultarCliente extends JFrame{
+public class ConsultarCliente extends Pantalla{
     private GestorCliente gCliente;
     private JPanel panelPrincipal;
     private JLabel etNumDNI;

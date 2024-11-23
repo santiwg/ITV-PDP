@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class RegistrarVehiculo extends JFrame {
+public class RegistrarVehiculo extends Pantalla {
     private JPanel panelPrincipal;
     private JLabel etNroChasis;
     private JTextField caNroChasis;

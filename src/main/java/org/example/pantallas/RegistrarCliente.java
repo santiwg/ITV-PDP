@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RegistrarCliente extends JFrame {
+public class RegistrarCliente extends Pantalla {
     private JPanel panelPrincipal;
     private JTextField caApellido;
     private JTextField caNombre;

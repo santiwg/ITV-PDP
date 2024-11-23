@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class RegistrarRevision extends JFrame {
+public class RegistrarRevision extends Pantalla {
     private JPanel panelPrincipal;
     private JTextField caPatente;
     private JLabel etPatente;
@@ -65,13 +65,13 @@ public class RegistrarRevision extends JFrame {
 
                     gestorRevision.agregarRevision(gestorRevision.getNumeroRevision(),gestorRevision.getGestorCliente().buscar(rCliente),
                             gestorRevision.getGestorVehiculo().buscar(rPatente), rEstacion, LocalDate.now());
-                    new Mensaje("Revisión registrada.");
+                    JOptionPane.showMessageDialog(null,"Revisión registrada.", "",JOptionPane.INFORMATION_MESSAGE);
                 } catch (NumberFormatException error) {
-                    new Mensaje("Error al intentar registrar la revisión: \n Puede que haya ingresado caracteres en lugar de números.");
+                    JOptionPane.showMessageDialog(null,error.getMessage(), "Error",JOptionPane.ERROR_MESSAGE);
                 } catch (IllegalArgumentException error) {
-                    new Mensaje("Error al intentar registrar el vehículo: \n"+error.getMessage());
+                    JOptionPane.showMessageDialog(null,error.getMessage(), "Error",JOptionPane.ERROR_MESSAGE);
                 } catch (Exception error) {
-                    new Mensaje("Error al intentar registrar la revisión");
+                    JOptionPane.showMessageDialog(null,error.getMessage(), "Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

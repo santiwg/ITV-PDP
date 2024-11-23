@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class ConsultarVehiculo extends JFrame{
+public class ConsultarVehiculo extends Pantalla{
     private JTextField caNroChasis;
     private JTextField caModelo;
     private JTextField caAnioFabricacion;

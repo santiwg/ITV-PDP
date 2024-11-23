@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class ConsultarRevision extends JFrame {
+public class ConsultarRevision extends Pantalla {
     private JPanel panelPrincipal;
     private GestorRevision gestorRevision;
     private JTextField TFNumDoc;
