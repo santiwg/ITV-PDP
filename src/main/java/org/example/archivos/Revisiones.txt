@@ -1,5 +1,1 @@
-nroRevision,dniCliente,patenteVehiculo,numeroEstacionVTV,fechaAlta(dd/mm/aaaa) //solo tenemos en cuenta los atributos que utilizan en los CU
-1,21912776,DDH893,1,22/11/2024
-1,21912776,DDH893,1,22/11/2024
-1,21912776,DDH893,1,22/11/2024
-4,45837962,AD 219 WK,1,23/11/2024
+nroRevision,dniCliente,patenteVehiculo,numeroEstacionVTV,fechaAlta(dd/mm/aaaa) //consideramos atributos usados en los CU

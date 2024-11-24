@@ -43,8 +43,8 @@ private GestorTipoVehiculo gestorTV;
 
                 if (datos.length == 9) { // si la línea tiene todos los atributos
                     String patente = datos[0].trim();
-                    String marca = datos[1].trim();
-                    String modelo = datos[2].trim();
+                    String modelo = datos[1].trim();
+                    String marca = datos[2].trim();
                     String nroChasis = datos[3].trim();
                     int anioFabricacion = Integer.parseInt(datos[4].trim());
                     double kilometros = Double.parseDouble(datos[5].trim());
